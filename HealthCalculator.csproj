@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BodyFatPercent.cs" />
+    <Compile Include="EnumTypes.cs" />
     <Compile Include="HealthCalculator.cs" />
     <Compile Include="HealthStatus.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

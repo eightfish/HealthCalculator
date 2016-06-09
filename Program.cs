@@ -25,7 +25,7 @@ namespace HealthCalculator
             Sex sex = (Sex)Enum.Parse(typeof(Sex), Console.ReadLine());
 
             var person = new Person() { age = age, height = height, weight = weight, sex = sex };
-            var status = HealthCalculator.Calculate(person);
+            var status = HealthCalculator.Analyze(person);
 
             Console.WriteLine(string.Format("Result: is Healthy? (true or false) {0}", status.IsHealthy));
             Console.WriteLine(string.Format("BMI number is {0}", status.BMINumber));

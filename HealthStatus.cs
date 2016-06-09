@@ -6,43 +6,6 @@ using System.Threading.Tasks;
 
 namespace HealthCalculator
 {
-    enum BMIStatus
-    {
-        Light,
-        Normal,
-        Best,
-        Fat,
-        VeryFat,
-        ExtremeFat
-    }
-
-    enum BodyFatPercentStatus
-    {
-        Thin,
-        Normal,
-        Fat
-    }
-
-    enum Sex
-    {
-        female,
-        male
-    }
-
-    class Person
-    {
-        public Sex sex { get; set; }
-        public int age { get; set; }
-        public double height { get; set; }
-        public double weight { get; set; }
-    }
-
-    class BodyFatPercent
-    {
-        public double BodyFatPercentNumber { get;  set; }
-        public Sex PersonSex { get;  set; }
-    }
-
     class HealthStatus
     {
         public double BMINumber { get; private set; }

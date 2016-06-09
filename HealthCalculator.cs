@@ -8,11 +8,17 @@ namespace HealthCalculator
 {
     static class HealthCalculator
     {
-        public static HealthStatus Calculate(Person person)
+        public static HealthStatus Analyze(Person person)
         {
             double BMINumber = CalculateBMINumber(person);
             double bodyFatPercentNumber = CalculateBodyFatPercentNumber(BMINumber, person);
             return new HealthStatus(BMINumber, new BodyFatPercent() { BodyFatPercentNumber = bodyFatPercentNumber, PersonSex = person.sex });
+        }
+
+        private static double CalculateBestBMINumber(Person person)
+        {
+
+            return 0;
         }
 
         private static double CalculateBMINumber(Person person)
