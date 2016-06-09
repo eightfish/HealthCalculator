@@ -12,13 +12,23 @@ namespace HealthCalculator
         {
             double BMINumber = CalculateBMINumber(person);
             double bodyFatPercentNumber = CalculateBodyFatPercentNumber(BMINumber, person);
-            return new HealthStatus(BMINumber, new BodyFatPercent() { BodyFatPercentNumber = bodyFatPercentNumber, PersonSex = person.sex });
+            var bodyFatPercent = new BodyFatPercent() { BodyFatPercentNumber = bodyFatPercentNumber, PersonSex = person.sex };
+            return new HealthStatus(BMINumber, bodyFatPercent);
         }
 
-        private static double CalculateBestBMINumber(Person person)
+        public static BestWeightRange Suggest(Person person)
         {
+            var bestBMINumberRange = HealthStatus.BestBMINumberRange;
+            var bestBodyFatPercentRange = person.sex == Sex.male ? HealthStatus.MaleBestBodyFatPercentNumberRange : HealthStatus.FemaleBestBodyFatPercentNumberRange;
 
-            return 0;
+            var minWeightOfBMI = CalculateBestWeightOfBMI(bestBMINumberRange.Item1, person);
+            var maxWeightOfBMI = CalculateBestWeightOfBMI(bestBMINumberRange.Item2, person);
+            var weightRangeOfBMI = new Tuple<double, double>(minWeightOfBMI, maxWeightOfBMI);
+
+            var minWeightOfBodyFatPercent = CalculateBestWeightOfBodyFatPercent(bestBodyFatPercentRange.Item1, person);
+            var maxWeightOfBodyFatPercent = CalculateBestWeightOfBodyFatPercent(bestBodyFatPercentRange.Item2, person);
+            var weightRangeOfBodyFatPercent = new Tuple<double, double>(minWeightOfBodyFatPercent, maxWeightOfBodyFatPercent);
+            return new BestWeightRange() { WeightRangeOfBMI = weightRangeOfBMI, WeightRangeOfBodyFatPercent = weightRangeOfBodyFatPercent};
         }
 
         private static double CalculateBMINumber(Person person)
@@ -29,6 +39,17 @@ namespace HealthCalculator
         private static double CalculateBodyFatPercentNumber(double BMINumber, Person person)
         {
             return 1.2 * BMINumber + 0.23 * person.age - 5.4 - 10.8 * (int)person.sex;
+        }
+
+        private static double CalculateBestWeightOfBMI(double BMINumber, Person person)
+        {
+            return Math.Pow(person.height, 2) * BMINumber;
+        }
+
+        private static double CalculateBestWeightOfBodyFatPercent(double bodyFatPercent, Person person)
+        {
+            double BMINumber = (bodyFatPercent - 0.23 * person.age + 5.4 + 10.8 * (int)person.sex) / 1.2;
+            return CalculateBestWeightOfBMI(BMINumber, person);
         }
     }
 }

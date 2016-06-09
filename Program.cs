@@ -33,6 +33,10 @@ namespace HealthCalculator
             Console.WriteLine(string.Format("Body fat percent is {0}", status.BodyFatPercent.BodyFatPercentNumber));
             Console.WriteLine(string.Format("Body fat percent number is {0}", status.BodyFatPercentStatus));
 
+            var suggestion = HealthCalculator.Suggest(person);
+            Console.WriteLine(string.Format("Best weight of BMI is : {0} - {1}", suggestion.WeightRangeOfBMI.Item1, suggestion.WeightRangeOfBMI.Item2));
+            Console.WriteLine(string.Format("Best weight of Body Fat Percent is : {0} - {1}", suggestion.WeightRangeOfBodyFatPercent.Item1, suggestion.WeightRangeOfBodyFatPercent.Item2));
+
             Console.WriteLine("It is over.");
             Console.Read();
         }

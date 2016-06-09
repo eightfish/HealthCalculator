@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BestWeightRange.cs" />
     <Compile Include="BodyFatPercent.cs" />
     <Compile Include="EnumTypes.cs" />
     <Compile Include="HealthCalculator.cs" />

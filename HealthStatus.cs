@@ -10,7 +10,7 @@ namespace HealthCalculator
     {
         public double BMINumber { get; private set; }
         public BodyFatPercent BodyFatPercent { get; private set; }
-
+        
         public BMIStatus BMIStatus
         {
             get
@@ -85,6 +85,10 @@ namespace HealthCalculator
                 return isHealthy;
             }
         }
+
+        public static Tuple<double, double> BestBMINumberRange = new Tuple<double, double>(22, 23);
+        public static Tuple<double, double> MaleBestBodyFatPercentNumberRange = new Tuple<double, double>(15, 17);
+        public static Tuple<double, double> FemaleBestBodyFatPercentNumberRange = new Tuple<double, double>(25, 29);
 
         public HealthStatus(double BMINumber, BodyFatPercent bodyFatPercent)
         {
