@@ -1,0 +1,6 @@
+c:\users\michaellu\documents\visual studio 2015\Projects\HealthCalculator\HealthCalculator\bin\Debug\HealthCalculator.exe.config
+c:\users\michaellu\documents\visual studio 2015\Projects\HealthCalculator\HealthCalculator\bin\Debug\HealthCalculator.exe
+c:\users\michaellu\documents\visual studio 2015\Projects\HealthCalculator\HealthCalculator\bin\Debug\HealthCalculator.pdb
+c:\users\michaellu\documents\visual studio 2015\Projects\HealthCalculator\HealthCalculator\obj\Debug\HealthCalculator.csprojResolveAssemblyReference.cache
+c:\users\michaellu\documents\visual studio 2015\Projects\HealthCalculator\HealthCalculator\obj\Debug\HealthCalculator.exe
+c:\users\michaellu\documents\visual studio 2015\Projects\HealthCalculator\HealthCalculator\obj\Debug\HealthCalculator.pdb
